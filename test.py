@@ -501,7 +501,7 @@ if __name__ == '__main__':
                     np.save(os.path.join(modelResultDir, 'gini_scale{}_gradf{}.npy'.format(scale, gradF)), giniNP)
         if doOccSNR:
             n = 10
-            r = 20
+            r = 10
             for gradF in gradFs:
                 headerRow.append('occSNR_{}(n={}, r={}) classScore/sumSquare/squareSum'.format(gradF, n, r))
                 totalConf = 0
@@ -826,9 +826,9 @@ if __name__ == '__main__':
         if doOcc:
             # ---------------------occ-----------------------#
             NRList = [
-                #(10, 20, 0),
-                (10, 20, 0.5),
-                (10, 20, 1)
+                (10, 10, 0),
+                (10, 10, 0.5),
+                (10, 10, 1)
             ]
             for (N, R, color) in NRList:
                 for gradF in gradFs:
